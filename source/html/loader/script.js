@@ -1,0 +1,1 @@
+document.getElementById('loading').removeAttribute('data-server-rendered')
