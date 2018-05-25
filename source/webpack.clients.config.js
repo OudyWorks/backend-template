@@ -111,6 +111,11 @@ module.exports = function webpackBundles(dirname, entry) {
                     VERSION: `'${uikitVersion}'`
                 })
             ],
+            resolve: {
+                alias: {
+                    'uikit-util': path.resolve(dirname, 'node_modules/uikit/src/js/util')
+                }
+            },
         }
     )
 }
