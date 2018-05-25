@@ -113,7 +113,7 @@ module.exports = function webpackBundles(dirname, entry) {
             ],
             resolve: {
                 alias: {
-                    'uikit-util': path.resolve(dirname, 'node_modules/uikit/src/js/util')
+                    'uikit-util': require.resolve('uikit/src/js/util')
                 }
             },
         }
