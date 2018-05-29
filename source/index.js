@@ -19,6 +19,7 @@ class Template extends Renderer {
                     route.component = 'template'
                     route.task = 'default'
                     route.url = /.*/
+                    route.allowed = true
                 }
             }
         )

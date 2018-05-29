@@ -1,4 +1,5 @@
 const base =  require('./webpack.base.config'),
+    path = require('path'),
     merge = require('webpack-merge')
 
 module.exports = function webpackBundles(dirname, entry) {
@@ -27,6 +28,11 @@ module.exports = function webpackBundles(dirname, entry) {
                         ]
                     },
                 ]
+            },
+            resolve: {
+                alias: {
+                    'template-uikit': path.join(__dirname, 'uikit-bundle.js')
+                }
             },
         }
     )

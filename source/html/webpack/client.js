@@ -1,9 +1,6 @@
 let create = require('./create').default,
     Vue = require('vue').default,
-    UIkit = require('uikit/src/js/uikit').default,
-    UIkitIcons = require('uikit/dist/js/uikit-icons')
-
-UIkitIcons(UIkit)
+    UIkit = require('uikit').default
 
 const { application, router } = create()
 

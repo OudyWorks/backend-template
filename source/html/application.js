@@ -123,18 +123,34 @@ export default {
     },
     data() {
         return {
-            busy: true
+            
         }
     },
     created() {
 
         this.$application.router = this.$router
-        this.$application.update(this.$route)
 
         this.$router.beforeEach(
             (to, from, next) => {
+                this.$set(this.$store.state, 'busy', true)
+                next()
+            }
+        )
+        this.$router.beforeResolve(
+            (to, from, next) => {
                 this.$application.update(to)
                 next()
+            }
+        )
+        this.$router.onReady(
+            () => {
+                this.$application.update(this.$router.currentRoute)
+                this.$set(this.$store.state, 'ready', true)
+            }
+        )
+        this.$router.afterEach(
+            (to, from) => {
+                this.$set(this.$store.state, 'busy', false)
             }
         )
 
@@ -174,7 +190,7 @@ export default {
                 navbar: application.render('navbar', h)
             }
 
-        let page = <div class={application.classes['page']}>
+        let page = <div class={application.classes['page']} hidden={!this.$store.state.ready}>
             <div class={application.classes['header-mobile']}>
                 <nav class="uk-navbar-container uk-navbar" uk-navbar="">
                     {
@@ -298,6 +314,7 @@ export default {
                     application.render('footer', h)
                 }
             </footer>
+            <div uk-spinner="" hidden={!this.$store.state.busy}></div>
         </div>
 
         if(application.layout.pageContainer)

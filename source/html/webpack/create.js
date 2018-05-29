@@ -16,6 +16,14 @@ export default function create() {
             mode: 'history',
             routes: APPLICATION.routes
         }),
+        store = new Vuex.Store({
+            state: {
+                ready: false,
+                busy: true,
+                component: '',
+                task: ''
+            }
+        }),
         i18n = new VueI18n({
             locale: 'en',
             messages: {
@@ -25,6 +33,7 @@ export default function create() {
         application = {
             router,
             i18n,
+            store,
             render: h =>
                 h({
                     ...Application
@@ -36,14 +45,18 @@ export default function create() {
         var values = [], len = arguments.length - 4;
         while ( len-- > 0 ) values[ len ] = arguments[ len + 4 ];
         if(!key.match(/^(component|module)/)) {
-            let [component, task] = host.$options.name.split('-') || ''
-            if(i18n._te(`${component}.${key}`, _locale, messages))
-                key = `${component}.${key}`
-            else if(i18n._te(`${component}.${task}.${key}`, _locale, messages))
-                key = `${component}.${task}.${key}`
+            let component = host.$options.component,
+                task = host.$options.task,
+                module = host.$options.module
+            if(i18n._te(`component.${component}.${key}`, _locale, messages))
+                key = `component.${component}.${key}`
+            else if(i18n._te(`component.${component}.${task}.${key}`, _locale, messages))
+                key = `component.${component}.${task}.${key}`
+            else if(i18n._te(`module.${module}.${key}`, _locale, messages))
+                key = `module.${module}.${key}`
         }
         return _t.apply(i18n, [key, _locale, messages, host].concat(values))
     }
 
-    return { application, router }
+    return { application, router, i18n, store }
 }

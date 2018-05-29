@@ -20,7 +20,8 @@ module.exports = function webpackBase(dirname, environment) {
         resolve: {
             extensions: ['.js'],
             alias: {
-                'APPLICATION': path.resolve(dirname, './webpack.common.js')
+                'APPLICATION': path.resolve(dirname, './webpack.common.js'),
+                'template-uikit': path.join(__dirname, 'uikit.js')
             }
         },
         plugins: [

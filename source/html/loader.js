@@ -1,7 +1,6 @@
 import logo from './loader/logo'
 
-const style = require('!!raw-loader!./loader/style.css'),
-    script = require('!!raw-loader!./loader/script.js')
+const style = require('!!raw-loader!./loader/style.css')
 
 export default {
     name: 'loader',
@@ -12,7 +11,7 @@ export default {
         ],
         script: [
             {
-                innerHTML: script,
+                innerHTML: `document.getElementById('loading').removeAttribute('data-server-rendered')`,
                 type: 'text/javascript',
                 body: true
             }

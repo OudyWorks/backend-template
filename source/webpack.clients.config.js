@@ -42,16 +42,20 @@ module.exports = function webpackBundles(dirname, entry) {
                             },
                             {
                                 loader: 'css-loader',
-                                options: {
-                                    // sourceMap: true,
-                                    // modules: true
-                                }
+                                // options: {
+                                //     sourceMap: true,
+                                //     importLoaders: 1,
+                                //     modules: true
+                                // }
                             },
                             {
                                 loader: 'less-loader',
-                                options: {
-                                    // relativeUrls: true
-                                }
+                                // options: {
+                                //     paths: [
+                                //         require.resolve('uikit/package.json').replace('/uikit/package.json', '')
+                                //     ]
+                                //     // relativeUrls: true
+                                // }
                             }
                         ]
                         // use: ExtractTextPlugin.extract({
