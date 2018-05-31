@@ -11,7 +11,7 @@ class Template extends Renderer {
         )
         Application.triggers.afterRoute.push(
             async (application, request, response, route) => {
-                if(!route.viewLess && !response.ssr && request.accepts.type(this.types) == 'html') {
+                if(!application.socket && !route.viewLess && !response.ssr && request.accepts.type(this.types) == 'html') {
                     Object.keys(route).forEach(
                         key =>
                             delete route[key]
@@ -43,7 +43,7 @@ class Template extends Renderer {
         let type = request.accepts.type(this.types),
             language = request.accepts.language(this.languages)
 
-        if(type == 'html')
+        if(type == 'html' && !application.socket)
             payload = await HTML.render(application, request, response, route, payload)
 
         return super.render(application, request, response, route, payload)
