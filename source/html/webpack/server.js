@@ -8,7 +8,15 @@ export default async context =>
 
             if(context.payload.ssr) {
 
-                let { application, router } = create()
+                let { application, router, store } = create()
+
+                Vue.set(store.state, 'state', context.payload.state)
+
+                application.metaInfo = {
+                    script: [
+                        { innerHTML: `window.__INITIAL_STATE__ = ${JSON.stringify(context.payload.state)}`, type: 'text/javascript' }
+                    ]
+                }
                 application = new Vue(application)
                 router.push(context.request.url)
                 router.onReady(
@@ -20,6 +28,8 @@ export default async context =>
                 )
 
             } else {
+
+                loader.metaInfo.script.push({ innerHTML: `window.__INITIAL_STATE__ = ${JSON.stringify(context.payload.state)}`, type: 'text/javascript' })
 
                 let application = new Vue(loader)
                 context.meta = application.$meta()

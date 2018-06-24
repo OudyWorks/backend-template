@@ -21,7 +21,7 @@ export default function create() {
                 ready: false,
                 busy: true,
                 component: '',
-                task: ''
+                task: '',
             }
         }),
         i18n = new VueI18n({

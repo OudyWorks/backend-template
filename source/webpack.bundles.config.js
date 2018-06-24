@@ -27,6 +27,17 @@ module.exports = function webpackBundles(dirname, entry) {
                             'css-loader'
                         ]
                     },
+                    {
+                        test: /\.(less)$/,
+                        use: [
+                            {
+                                loader: 'css-loader',
+                            },
+                            {
+                                loader: 'less-loader',
+                            }
+                        ]
+                    },
                 ]
             },
             resolve: {

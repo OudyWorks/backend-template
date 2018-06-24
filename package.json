@@ -1,6 +1,6 @@
 {
   "name": "@oudyworks/backend-template",
-  "version": "1.0.70",
+  "version": "1.0.86",
   "description": "vuejs & uikit template renderrer for @oudyworks/backend",
   "main": "index.js",
   "scripts": {
@@ -33,6 +33,7 @@
   "homepage": "https://github.com/OudyWorks/backend-template#readme",
   "dependencies": {
     "@oudyworks/backend": "^1.0.13",
+    "@oudyworks/backend-client": "^1.0.26",
     "@oudyworks/uikit-themes": "^1.0.15",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.4",

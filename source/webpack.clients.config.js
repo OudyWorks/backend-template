@@ -42,63 +42,12 @@ module.exports = function webpackBundles(dirname, entry) {
                             },
                             {
                                 loader: 'css-loader',
-                                // options: {
-                                //     sourceMap: true,
-                                //     importLoaders: 1,
-                                //     modules: true
-                                // }
                             },
                             {
                                 loader: 'less-loader',
-                                // options: {
-                                //     paths: [
-                                //         require.resolve('uikit/package.json').replace('/uikit/package.json', '')
-                                //     ]
-                                //     // relativeUrls: true
-                                // }
                             }
                         ]
-                        // use: ExtractTextPlugin.extract({
-                        //     fallback: 'style-loader',
-                        //     use: [
-                        //         {
-                        //             loader: 'css-loader',
-                        //             options: {
-                        //                 // sourceMap: true,
-                        //                 // modules: true
-                        //             }
-                        //         },
-                        //         {
-                        //             loader: 'less-loader',
-                        //             options: {
-                        //                 // relativeUrls: true
-                        //             }
-                        //         }
-                        //     ]
-                        // })
                     },
-                    // {
-                    //     test: /\.css$/,
-                    //     use: [
-                    //         {
-                    //             loader: 'style-loader'
-                    //         },
-                    //         {
-                    //             loader: 'css-loader'
-                    //         }
-                    //     ]
-                    //     // loader: ExtractTextPlugin.extract({
-                    //     //     use: 'css-loader',
-                    //     //     fallback: 'vue-style-loader'
-                    //     // })
-                    // },
-                    // {
-                    //     test: /\.css$/,
-                    //     use: [
-                    //         'vue-style-loader',
-                    //         'css-loader'
-                    //     ]
-                    // },
                     {
                         loader: 'html-loader',
                         test: /\.svg$/,

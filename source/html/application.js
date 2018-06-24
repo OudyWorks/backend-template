@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import classes from './application/classes'
 
+require('./application/style.less')
+
 let $application = {
     classes: {},
     layout: {
@@ -119,7 +121,8 @@ export default {
             //     href: '/static/css/app.html.css',
             //     rel: 'stylesheet'
             // }
-        ]
+        ],
+        __dangerouslyDisableSanitizers: ['script', 'style']
     },
     data() {
         return {
@@ -296,7 +299,7 @@ export default {
                                     application.render('breadcrumbs', h)
                                 }
                             </div>
-                            <router-view></router-view>
+                            <router-view ref="view"></router-view>
                         </div>
                         <aside class={application.classes['sidebar']}>
 
