@@ -1,6 +1,6 @@
 {
   "name": "@oudyworks/backend-template",
-  "version": "1.0.86",
+  "version": "1.0.87",
   "description": "vuejs & uikit template renderrer for @oudyworks/backend",
   "main": "index.js",
   "scripts": {
@@ -33,7 +33,7 @@
   "homepage": "https://github.com/OudyWorks/backend-template#readme",
   "dependencies": {
     "@oudyworks/backend": "^1.0.13",
-    "@oudyworks/backend-client": "^1.0.26",
+    "@oudyworks/backend-client": "^1.0.27",
     "@oudyworks/uikit-themes": "^1.0.15",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.4",
@@ -52,18 +52,18 @@
     "recursive-readdir-sync": "^1.0.6",
     "shelljs": "^0.8.2",
     "style-loader": "^0.21.0",
-    "uikit": "^3.0.0-rc.4",
+    "uikit": "^3.0.0-rc.6",
     "vue": "^2.5.16",
-    "vue-i18n": "^7.7.0",
-    "vue-loader": "^15.2.3",
+    "vue-i18n": "^7.8.1",
+    "vue-loader": "^15.2.4",
     "vue-meta": "^1.5.0",
     "vue-router": "^3.0.1",
     "vue-server-renderer": "^2.5.16",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",
     "vuex": "^3.0.1",
-    "webpack": "^4.10.2",
-    "webpack-cli": "^2.1.4",
-    "webpack-merge": "^4.1.2"
+    "webpack": "^4.12.1",
+    "webpack-cli": "^2.1.5",
+    "webpack-merge": "^4.1.3"
   }
 }
