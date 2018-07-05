@@ -15,17 +15,24 @@ Vue.use(function (Vue) {
 })
 
 logo.render = (h) =>
-    <h1>LOGO</h1>
+    <h1>
+        AE
+    </h1>
 
-loader.metaInfo.title = 'Loading'
-loader.metaInfo.titleTemplate = '%s - WebsiteName'
-loader.metaInfo.script.push({
+const appScript = {
     src: '/static/js/app.html.js',
     type: 'text/javascript',
     async: true
-})
-application.metaInfo.titleTemplate = '%s - WebsiteName'
-application.metaInfo.script.push({
-    src: '/static/js/app.html.js',
-    type: 'text/javascript'
-})
+},
+icon = {
+    href: 'data:;base64,iVBORw0KGgo=',
+    rel: 'icon'
+}
+
+loader.metaInfo.title = 'Loading'
+loader.metaInfo.titleTemplate = '%s - Website'
+loader.metaInfo.script.push(appScript)
+loader.metaInfo.link = [icon]
+application.metaInfo.titleTemplate = '%s - Website'
+application.metaInfo.script.push(appScript)
+application.metaInfo.link = [icon]

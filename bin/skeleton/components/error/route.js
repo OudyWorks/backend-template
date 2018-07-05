@@ -4,7 +4,7 @@ export default {
     name: 'error',
     path: '*',
     component: Component.extend({
-        name: 'component-error',
+        component: 'error',
         metaInfo() {
             return {
                 title: this.$t(`${this.code}.title`),
