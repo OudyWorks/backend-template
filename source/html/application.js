@@ -89,7 +89,7 @@ Vue.use(function (Vue) {
 export default {
     name: 'application',
     metaInfo: {
-        title: 'Helloooo world',
+        title: '',
         titleTemplate: '%s - Website',
         meta: [
             {

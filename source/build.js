@@ -17,7 +17,7 @@ export default async directory => {
             route => {
                 let [,component,,task = 'default'] = route.match(routesRegex)
                 console.log('component', component, task)
-                return `\trequire('${route}').default`
+                return `\trequire('${route.replace(directory, '.')}').default`
             }
         ),
         modules = files.filter(
@@ -27,7 +27,7 @@ export default async directory => {
             file => {
                 let [,module] = file.match(moduleRegex)
                 console.log('module', module)
-                return `\t'${module}': require('${file}').default`
+                return `\t'${module}': require('${file.replace(directory, '.')}').default`
             }
         ),
         locales = files.filter(
@@ -37,7 +37,7 @@ export default async directory => {
             file => {
                 let [,component,,task = 'default'] = file.match(componentLocalesRegex)
                 console.log('locale', component, task)
-                return `\t\t'${component+(task != 'default' ? '.'+task : '')}': require('${file}').default`
+                return `\t\t'${component+(task != 'default' ? '.'+task : '')}': require('${file.replace(directory, '.')}').default`
             }
         )
 

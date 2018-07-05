@@ -1,6 +1,6 @@
 {
   "name": "@oudyworks/backend-template",
-  "version": "1.0.88",
+  "version": "1.0.93",
   "description": "vuejs & uikit template renderrer for @oudyworks/backend",
   "main": "index.js",
   "scripts": {
@@ -44,10 +44,13 @@
     "booleanify": "^1.0.0",
     "colors": "^1.3.0",
     "css-loader": "^0.28.11",
+    "dataloader": "^1.4.0",
+    "etag": "^1.8.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-loader": "^0.5.5",
     "less": "^2.7.3",
     "less-loader": "^4.1.0",
+    "mime": "^2.3.1",
     "raw-loader": "^0.5.1",
     "recursive-readdir-sync": "^1.0.6",
     "shelljs": "^0.8.2",
