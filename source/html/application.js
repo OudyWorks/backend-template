@@ -286,7 +286,7 @@ export default {
                 }
             </div>
             <div>
-                {
+                { 
                     application.render('section-top', h)
                 }
             </div>
@@ -302,7 +302,9 @@ export default {
                             <router-view ref="view"></router-view>
                         </div>
                         <aside class={application.classes['sidebar']}>
-
+                                {
+                                    application.render('sidebar')
+                                }
                         </aside>
                     </div>
                 </div>
