@@ -286,7 +286,7 @@ export default {
                 }
             </div>
             <div>
-                { 
+                {
                     application.render('section-top', h)
                 }
             </div>
@@ -303,7 +303,7 @@ export default {
                         </div>
                         <aside class={application.classes['sidebar']}>
                                 {
-                                    application.render('sidebar')
+                                    application.render('sidebar', h)
                                 }
                         </aside>
                     </div>
