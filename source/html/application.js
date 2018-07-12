@@ -4,6 +4,7 @@ import classes from './application/classes'
 require('./application/style.less')
 
 let $application = {
+    defaultClasses: {},
     classes: {},
     layout: {
         mobile: {
@@ -42,6 +43,24 @@ let $application = {
     },
     update(to) {
         this.classes = classes(this.layout)
+        Object.keys(this.defaultClasses).forEach(
+            position => {
+                if (this.defaultClasses[position]) {
+                    if (this.defaultClasses[position].set)
+                        this.classes[position] = this.defaultClasses[position].set
+                    if (this.defaultClasses[position].append)
+                        this.classes[position] = this.classes[position].concat(this.defaultClasses[position].append)
+                    if (this.defaultClasses[position].prepend)
+                        this.classes[position] = this.defaultClasses[position].prepend.concat(this.classes[position])
+                    if (this.defaultClasses[position].remove && this.classes[position])
+                    this.defaultClasses[position].remove.forEach((className) => {
+                            let index = this.classes[position].indexOf(className)
+                            if (index != -1)
+                                this.classes[position].splice(index, 1)
+                        })
+                }
+            }
+        )
         to.matched.forEach(
             route =>
                 Object.keys(route.components).forEach(
