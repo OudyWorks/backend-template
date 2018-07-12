@@ -318,7 +318,9 @@ export default {
                                     application.render('breadcrumbs', h)
                                 }
                             </div>
-                            <router-view ref="view"></router-view>
+                            <div class={application.classes['view']}>
+                                <router-view ref="view"></router-view>
+                            </div>
                         </div>
                         <aside class={application.classes['sidebar']}>
                                 {

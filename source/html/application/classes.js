@@ -30,6 +30,9 @@ export default function classes(layout) {
         'main.grid': [
             'uk-grid', layout.sidebar.gutter && `uk-grid-${layout.sidebar.gutter}`, layout.sidebar.divider && 'uk-grid-divider'
         ],
+        'view': [
+            
+        ],
         'breadcrumbs': [
             layout.breadcrumbs && 'uk-margin-medium-bottom'
         ],
