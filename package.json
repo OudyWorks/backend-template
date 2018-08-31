@@ -1,6 +1,6 @@
 {
   "name": "@oudyworks/backend-template",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "vuejs & uikit template renderrer for @oudyworks/backend",
   "main": "index.js",
   "scripts": {

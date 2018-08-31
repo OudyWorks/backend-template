@@ -104,13 +104,15 @@ class Client {
     }
     static connect(url, websocket = true) {
         return backend.connect(url, websocket).then(
-            () =>
-                backend.websocket.onclose = () =>
-                    setTimeout(
-                        () =>
-                            this.connect(url, websocket),
-                        3000
-                    )
+            () => {
+                if(backend.websocket)
+                    backend.websocket.onclose = () =>
+                        setTimeout(
+                            () =>
+                                this.connect(url, websocket),
+                            3000
+                        )
+                }
         )
     }
     static getState(promises, to, from, next) {
