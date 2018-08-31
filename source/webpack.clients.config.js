@@ -8,7 +8,7 @@ const base =  require('./webpack.base.config'),
 
 module.exports = function webpackBundles(dirname, entry) {
     return merge(
-        base(dirname, 'clients'),
+        base(dirname, 'clients', true),
         {
             entry,
             output: {

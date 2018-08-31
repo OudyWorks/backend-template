@@ -3,7 +3,7 @@ const path = require('path'),
     webpack = require('webpack'),
     VueLoaderPlugin = require('vue-loader').VueLoaderPlugin
 
-module.exports = function webpackBase(dirname, environment) {
+module.exports = function webpackBase(dirname, environment, includeApplication) {
     return  {
         module: {
             rules: [
@@ -20,8 +20,8 @@ module.exports = function webpackBase(dirname, environment) {
         resolve: {
             extensions: ['.js'],
             alias: {
-                'APPLICATION': path.resolve(dirname, './webpack.common.js'),
-                'template-uikit': path.join(__dirname, 'uikit.js')
+                'template-uikit': path.join(__dirname, 'uikit.js'),
+                'APPLICATION': path.resolve(includeApplication ? dirname : __dirname, './webpack.common.js')
             }
         },
         plugins: [

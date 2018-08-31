@@ -2,9 +2,9 @@ const base =  require('./webpack.base.config'),
     path = require('path'),
     merge = require('webpack-merge')
 
-module.exports = function webpackBundles(dirname, entry) {
+module.exports = function webpackBundles(dirname, entry, includeApplication = false) {
     return merge(
-        base(dirname, 'bundles'),
+        base(dirname, 'bundles', includeApplication),
         {
             target: 'node',
             entry,

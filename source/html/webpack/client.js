@@ -87,10 +87,10 @@ class Client {
             }
         })
     }
-    static init() {
+    static init(url, websocket = true) {
         return this.setup().then(
             () => 
-                this.connect()
+                this.connect(url, websocket)
         ).then(
             () => 
                 this.mount()
@@ -102,13 +102,13 @@ class Client {
             ...application
         })
     }
-    static connect() {
-        return backend.connect().then(
+    static connect(url, websocket = true) {
+        return backend.connect(url, websocket).then(
             () =>
                 backend.websocket.onclose = () =>
                     setTimeout(
                         () =>
-                            this.connect(),
+                            this.connect(url, websocket),
                         3000
                     )
         )
